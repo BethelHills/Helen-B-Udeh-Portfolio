@@ -67,16 +67,22 @@ body {
 }
 
 .logo a {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ec4899;
+    display: inline-block;
     text-decoration: none;
     transition: var(--transition);
 }
 
-.logo a:hover {
-    color: #db2777;
+.logo-image {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo a:hover .logo-image {
+    opacity: 0.8;
+    transform: scale(1.05);
 }
 
 .nav-menu {
