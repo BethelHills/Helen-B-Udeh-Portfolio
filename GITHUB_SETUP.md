@@ -4,7 +4,7 @@
 
 1. Go to https://github.com/new
 2. Repository name: `Helen-B-Udeh-Portfolio` (or your preferred name)
-3. Description: "Professional Virtual Assistant Portfolio Website"
+3. Description: "The Pretty ProDesk | Executive Virtual Assistant Portfolio Website"
 4. Choose **Public** or **Private**
 5. **DO NOT** initialize with README, .gitignore, or license (we already have these)
 6. Click "Create repository"
