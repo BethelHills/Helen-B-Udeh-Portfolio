@@ -87,6 +87,27 @@ body {
     transform: scale(1.05);
 }
 
+/* Brand text and logo layout */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand-text {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: #111827; /* near-black for professional feel */
+    text-transform: none;
+}
+
+.brand-link .logo-image {
+    height: 44px;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,0.04));
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
