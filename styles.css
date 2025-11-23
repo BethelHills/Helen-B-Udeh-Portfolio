@@ -739,6 +739,16 @@ section {
     flex: 0 0 48px;
     min-height: 48px;
 }
+.service-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.service-description {
+    color: var(--text-light);
+    line-height: 1.7;
+}
 
 @media (min-width: 768px) {
     .pretty-page .ea-includes ul {
@@ -754,17 +764,6 @@ section {
         grid-template-columns: 1fr; /* single column on small screens */
         gap: 0.6rem;
     }
-}
-
-.service-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-.service-description {
-    color: var(--text-light);
-    line-height: 1.7;
 }
 
 /* Skills Section */
