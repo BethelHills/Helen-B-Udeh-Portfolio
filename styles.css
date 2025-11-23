@@ -663,6 +663,12 @@ section {
     color: var(--text-dark);
 }
 
+/* Keep the EA card's main title and short tagline centered */
+.pretty-page .service-card.ea-card .service-title,
+.pretty-page .service-card.ea-card .service-description {
+    text-align: center;
+}
+
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
