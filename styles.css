@@ -692,10 +692,17 @@ section {
 }
 
 /* Ensure EA paragraphs visually show a small three-space indent. We allow HTML NBSPs but also provide a CSS fallback. */
-.pretty-page .ea-details p,
+.pretty-page .ea-details p {
+    text-indent: 0; /* reset any previous indent */
+    padding-left: 0; 
+    text-align: center; /* center the EA detail sentences */
+    margin: 0.5rem auto; /* keep vertical spacing and center within card */
+    max-width: 80ch; /* limit line length for readability */
+}
+
 .pretty-page .ea-intro {
-    text-indent: 1.5ch; /* approximate three spaces */
-    padding-left: 0.2ch; /* small left padding to preserve layout */
+    text-indent: 0;
+    padding-left: 0;
 }
 
 .pretty-page .ea-includes li {
