@@ -653,6 +653,16 @@ section {
     text-align: center;
 }
 
+/* Left-align content inside Executive Assistant card only */
+.pretty-page .service-card.ea-card {
+    text-align: left;
+}
+
+.pretty-page .service-card.ea-card .ea-details {
+    margin-top: 0.5rem;
+    color: var(--text-dark);
+}
+
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
