@@ -684,6 +684,13 @@ section {
     gap: 0.75rem;
 }
 
+.pretty-page .ea-intro {
+    max-width: 760px;
+    margin: 0.5rem 0 0 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
 .pretty-page .ea-includes li {
     display: flex;
     gap: 0.75rem;
