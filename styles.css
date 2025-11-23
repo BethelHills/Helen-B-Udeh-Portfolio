@@ -127,6 +127,19 @@ body {
     display: block;
 }
 
+/* Force visibility in case of overrides */
+.pretty-page .about-image,
+.pretty-page .image-wrapper,
+.pretty-page .about-photo {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.pretty-page .about-photo {
+    z-index: 2;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
