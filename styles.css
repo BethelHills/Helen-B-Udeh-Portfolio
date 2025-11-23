@@ -319,10 +319,13 @@ body {
 }
 
 .hero-photo {
-    width: 300px;
-    height: 300px;
+    /* responsive circular frame */
+    width: clamp(160px, 22vw, 300px);
+    height: clamp(160px, 22vw, 300px);
     border-radius: 50%;
     object-fit: cover;
+    /* position image to show top (head) instead of centering */
+    object-position: 50% 20%;
     border: 5px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
