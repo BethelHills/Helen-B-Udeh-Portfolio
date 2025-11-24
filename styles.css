@@ -684,6 +684,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr; /* match services-summary two-column layout */
     gap: 1rem 2rem; /* match services-summary gaps */
+    text-align: left; /* ensure the EA list text aligns like services */
 }
 
 .pretty-page .ea-intro {
@@ -710,12 +711,11 @@ section {
 }
 
 .pretty-page .ea-includes li {
-.pretty-page .ea-includes li {
     display: grid;
     grid-template-columns: 48px 1fr; /* icon column then text to match services list */
-    gap: 0.35rem; /* even tighter gap */
+    gap: 0.5rem; /* match services-summary gap between icon and text */
     align-items: center; /* vertically center icon and text */
-    padding: 0.25rem 0; /* smaller vertical padding */
+    padding: 0.4rem 0; /* match services-summary vertical padding */
     color: var(--text-dark);
 }
 
@@ -723,6 +723,7 @@ section {
     display: inline-block;
     line-height: 1.4;
     margin-left: 0; /* ensure no left margin */
+    text-align: left; /* left-align the text block */
 }
 
 .pretty-page .ea-li-icon {
@@ -738,6 +739,27 @@ section {
     font-size: 1rem;
     flex: 0 0 48px;
     min-height: 48px;
+}
+
+@media (max-width: 768px) {
+    /* Mirror the services-summary responsive behavior for EA includes */
+    .pretty-page .ea-includes ul {
+        grid-template-columns: 1fr;
+    }
+
+    .pretty-page .ea-includes li {
+        grid-template-columns: 36px 1fr;
+        padding: 0.4rem 0;
+        gap: 0.5rem;
+    }
+
+    .pretty-page .ea-li-icon {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        min-height: 36px;
+        font-size: 0.95rem;
+    }
 }
 .service-title {
     font-size: 1.5rem;
