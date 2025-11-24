@@ -133,75 +133,82 @@ const testimonialDots = document.querySelectorAll('.dot');
 const prevBtn = document.getElementById('prev-testimonial');
 const nextBtn = document.getElementById('next-testimonial');
 
-const showTestimonial = (index) => {
-    testimonialCards.forEach((card, i) => {
-        card.classList.toggle('active', i === index);
-    });
-    
-    testimonialDots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-};
+if (testimonialCards.length > 0) {
+    const showTestimonial = (index) => {
+        testimonialCards.forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+        });
 
-const nextTestimonial = () => {
-    currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-    showTestimonial(currentTestimonial);
-};
+        if (testimonialDots && testimonialDots.length) {
+            testimonialDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+    };
 
-const prevTestimonial = () => {
-    currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
-    showTestimonial(currentTestimonial);
-};
-
-nextBtn.addEventListener('click', nextTestimonial);
-prevBtn.addEventListener('click', prevTestimonial);
-
-testimonialDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentTestimonial = index;
+    const nextTestimonial = () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
         showTestimonial(currentTestimonial);
-    });
-});
+    };
 
-// Auto-play testimonials
-let testimonialInterval = setInterval(nextTestimonial, 5000);
+    const prevTestimonial = () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
+        showTestimonial(currentTestimonial);
+    };
 
-// Pause on hover
-const testimonialsSlider = document.querySelector('.testimonials-slider');
-if (testimonialsSlider) {
-    testimonialsSlider.addEventListener('mouseenter', () => {
-        clearInterval(testimonialInterval);
-    });
-    
-    testimonialsSlider.addEventListener('mouseleave', () => {
-        testimonialInterval = setInterval(nextTestimonial, 5000);
-    });
+    if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+    if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+
+    if (testimonialDots && testimonialDots.length) {
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentTestimonial = index;
+                showTestimonial(currentTestimonial);
+            });
+        });
+    }
+
+    // Auto-play testimonials
+    let testimonialInterval = setInterval(nextTestimonial, 5000);
+
+    // Pause on hover
+    const testimonialsSlider = document.querySelector('.testimonials-slider');
+    if (testimonialsSlider) {
+        testimonialsSlider.addEventListener('mouseenter', () => {
+            clearInterval(testimonialInterval);
+        });
+
+        testimonialsSlider.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(nextTestimonial, 5000);
+        });
+    }
 }
 
 // Contact Form Handling
 const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show an alert
-    console.log('Form submitted:', formData);
-    
-    // Show success message (you can replace this with actual form submission)
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
-});
+        // Get form data
+        const formData = {
+            name: document.getElementById('name') ? document.getElementById('name').value : '',
+            email: document.getElementById('email') ? document.getElementById('email').value : '',
+            subject: document.getElementById('subject') ? document.getElementById('subject').value : '',
+            message: document.getElementById('message') ? document.getElementById('message').value : ''
+        };
+
+        // Here you would typically send the data to a server
+        // For now, we'll just show an alert
+        console.log('Form submitted:', formData);
+
+        // Show success message (you can replace this with actual form submission)
+        alert('Thank you for your message! I will get back to you soon.');
+
+        // Reset form
+        contactForm.reset();
+    });
+}
 
 // Brand Story Modal
 const brandStoryBtn = document.getElementById('view-brand-story');
